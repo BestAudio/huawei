@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>华为注册</title>
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+    <link rel="shortcut icon" href="img/icon.ico" />
+</head>
+<body>
+<!-- header -->
+    <div class="head">
+        <div class="head_center">
+            <img src="img/reg_logo.png" alt="">
+            <p class="bar">华为商城</p>
+        </div>
+    </div>
+<!-- login -->
+    <div class="login">
+        <div class="login_content">
+            <span class="login_mo login_mo_01">
+                手机号
+            </span>
+            <span class="login_mo login_mo_02">
+                电子邮箱
+            </span>
+            <p>已有华为账号<a href="login.html" target="_blank">登录></a></p>
+        </div>
+    </div>
+    <div class="barrier_bed">
+            <div class="barrier_bed_page">
+                <div class="barrier_bed_page_title">
+                    华为帐号通知
+                    <span id="close">×</span>
+                </div>
+                    <h2>华为帐号是用于访问所有华为服务的帐号，请您在使用前仔细阅读以下内容：</h2>
+                    <p>在您使用过程中本应用可能需要收集、使用您的下列信息:<br/>
+                        .您注册华为帐号时提供的信息：手机号或邮件地址、华为帐号密码；<br/>
+                        .网络信息：IP地址；
+                    </p>
+                    <p>
+                        上述数据将会传输并保存至中华人民共和国境内的服务器。<br/>
+                        如果您不同意我们采集上述信息，我们可能无法为您提供完整的服务，您可以退出或注销华为帐号以终止以上数据或功能的收集与处理。<br/>
+                        点击“同意”，即表示您同意上述内容及华为帐号用户协议、关于华为帐号与隐私的声明。
+                    </p>
+                    <p>
+                        <input type="checkbox" id="agreeCheck">
+                        我愿意通过邮件等形式获取有关华为的产品、服务和优惠活动的最新信息<br/>
+                        
+                    </p>
+                    <p>
+                        勾选后，您可以在“帐号中心”>“隐私中心”中更改。
+                    </p>
+                    <div class="agree">
+                        <input type="button" id="dele_che" value="取消">
+                        <input type="button" id="agreeNotice" value="同意">
+                    </div>
+                    
+            </div>
+        </div>
+<!-- reg -->
+    <div class="reg">
+        
+        <form action="" >
+            <div class="reg_setc">
+                <div class="reg_setc_01 reg_setc_left">
+                    国家&nbsp/&nbsp地区
+                </div>
+                <div class="reg_setc_01 reg_setc_right" id="ckecCou">
+                    <input type="text" id="ckecCountry" value = "中国">
+                    
+                    <span class="country_tri"></span>
+                    
+                </div>
+            </div>
+            <div class="reg_setc">
+                <div class="reg_setc reg_setc_phone">
+                    <div class="reg_setc_01 reg_setc_left">
+                        +86（中国）
+                    </div>
+                    <div class="reg_setc_01 reg_setc_right">
+                        <input type="text" id="phone" placeholder="请输入手机号">
+                        
+                    </div>
+                    <span class="tit_hint">手机号码不正确</span>
+                    <span class="tit_hint">手机号码已被注册，可直接登录</span>
+                    <span class="tit_hint">此空位必填项，不能为空</span>
+                </div>
+                <div class="reg_setc reg_setc_email">
+                        <div class="reg_setc_01 reg_setc_left">
+                            邮件地址
+                        </div>
+                        <div class="reg_setc_01 reg_setc_right">
+                            <input type="text" id="email" placeholder="请输入邮件地址">
+                            
+                        </div>
+                        <span class="tit_hint">邮箱号码不正确</span>
+                        <span class="tit_hint">此空位必填项，不能为空</span>
+                    </div>
+            </div>
+            
+            <div class="country_list">
+                <ul class="country_bar">
+                    <li value="">中国</li>
+                    <li value="">美国</li>
+                    <li value="">英国</li>
+                    <li value="">中国</li>
+                    <li value="">美国</li>
+                    <li value="">英国</li>
+                    <li value="">中国</li>
+                    <li value="">美国</li>
+                    <li value="">英国</li>
+                    <li value="">中国</li>
+                    <li value="">美国</li>
+                    <li value="">英国</li>
+                    <li value="">中国</li>
+                    <li value="">美国</li>
+                    <li value="">英国</li>
+                    <li value="">中国</li>
+                    <li value="">美国</li>
+                    <li value="">英国</li>
+                </ul>
+            </div>
+            <div class="reg_img_par">
+                <div class="reg_img_ver">
+                    <div class="img_index"></div>
+                    <div class="reg_smallimg">
+                        <img src="img/index/login01.png" alt="">
+                    </div>
+                </div>
+                <div class="btnV">
+                        <span>拖动左边滑块完成上方拼图</span>
+                        <div class="smallBtnp">
+                            <div class="smallBtn"></div>
+                        </div>
+                        
+                </div>
+            </div>
+            <div class="reg_setc">
+                <div class="reg_setc_01 reg_setc_right verify">  
+                    <span id="diamonds">点击按钮进行验证</span>
+                </div>
+            </div>
+            <div class="reg_setc">
+                <div class="reg_setc_01 reg_setc_left">
+                    短信验证码
+                </div>
+                <div class="reg_setc_01 reg_setc_right">
+                    <input type="text" id="messageCode" placeholder="请输入短信验证码">
+                    <a href="" class="note_h">获取验证码</a>
+                </div>
+                <span class="tit_hint">验证码不正确</span>
+                <span class="tit_hint">此空位必填项，不能为空</span>
+            </div>
+            <div class="reg_setc">
+                <div class="reg_setc_01 reg_setc_left">
+                    输入密码
+                </div>
+                <div class="reg_setc_01 reg_setc_right">
+                    <input class="userpass_01" id="userpass" type="password" placeholder="请输入密码">
+                </div>
+                <span class="tit_hint">此空位必填项，不能为空</span>
+            </div>
+            <div class="pass_word_hint">
+                    <span class="tri_thr"></span>
+                    <h5>密码需要满足以下要求</h5>
+                    <p>不能包含空格</p>
+                    <p>至少包含8个字符</p>
+                    <p>至少包含字符，字母，数字中的两种</p>
+                    <div class="stro_password">
+                        <div class="stro_info">
+                            <span>密码强度</span>&nbsp;&nbsp;&nbsp;<span>强</span>
+                        </div>
+                        <div class="green_bar"></div>
+                    </div>
+            </div>
+            <div class="reg_setc">
+                <div class="reg_setc_01 reg_setc_left">
+                    确认密码
+                </div>
+                <div class="reg_setc_01 reg_setc_right">
+                    <input class="userpass_01" id="repassword" type="password" placeholder="请再次输入密码">
+                </div>  
+                <span class="tit_hint">密码不一致</span>
+            </div>
+            <div class="reg_setc">
+                 <input type="button" class="reg_sub" value="注册">
+                 <span class="tit_hint" id="regFail_reg">亲，用户信息还没有填写完整呢</span>
+                 <span class="tit_hint" id="regFail">注册失败</span>
+            </div>
+           
+        </form>
+    </div>   
+<!-- footer -->
+    <div class="footer">
+        <p>
+            <a href="" target="_blank">华为帐号用户协议</a><span>|</span>
+            <a href="" target="_blank">关于华为帐号与隐私的声明</a><span>|</span>
+            <a href="" target="_blank">常见问题</a>
+        </p>
+        <p>Copyright&nbsp©&nbsp2011-2018&nbsp&nbsp华为软件技术有限公司&nbsp&nbsp版权所有&nbsp&nbsp保留一切权利&nbsp&nbsp苏B2-20070200号&nbsp|&nbsp苏ICP备09062682号-9</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/reg.js"></script>
