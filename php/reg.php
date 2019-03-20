@@ -3,7 +3,7 @@
 	//一、接收数据
 	$userphone = $_POST['userphone'];
 	$usercountry = $_POST['usercountry'];
-	$password = $_POST['password'];
+	$userpass = $_POST['userpass'];
     $useremail = $_POST['useremail'];
 
 	//二、处理（把数据保存到数据库里）
@@ -20,8 +20,8 @@
 
 		//3、传输数据（运送）
 		//3.1)、定义一个字符串，写上SQL语句
-		$sqlstr="insert into userinfo(userphone,usercountry,password,useremail)
-              values('$userphone','$usercountry','$password''$useremail')";
+		$sqlstr="insert into userinfo(userphone,useremail,userpass,usercountry)
+              values('$userphone','$useremail','$userpass','$usercountry')";
         //3.2)、执行SQL语句
         $result = mysql_query($sqlstr,$conn);
 		//4、关闭数据库（过河拆桥）
