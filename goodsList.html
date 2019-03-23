@@ -7,23 +7,17 @@
 <link rel="stylesheet" type="text/css" href="css/goodsList.css">
 <link rel="stylesheet" type="text/css" href="css/commonHeader.css">
 <link rel="stylesheet" type="text/css" href="css/commonFooter.css">
+<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+<link rel="shortcut icon" href="img/icon.ico"/>
 </head>
 <body>
-<!-- header -->
-    <!-- <div id="header">
-        <script type="text/javascript">
-            $(function(){
-                 $("#header").load("commonHeader.html")
-            })          
-        </script>
-    </div> -->
  <!-- header -->
 <div class="header">
     <div class="header_content">
         <div class="header_left">
-            <a href="" target="_blank">首页</a>
+            <a href="index.html" target="_blank">首页</a>
             <a href="" target="_blank">华为官网</a>
-            <a href="" target="_blank">荣耀官网</a>
+            <a href="index2.html" target="_blank">荣耀官网</a>
             <a href="" target="_blank">花粉俱乐部</a>
             <a href="" target="_blank">V码(优购码)</a>
             <a href="" target="_blank">企业购</a>
@@ -31,8 +25,8 @@
             <a href="" target="_blank">更多精彩</a>    
         </div> 
         <div class="header_right">
-            <a href="" target="_blank">请登录</a>
-            <a href="" target="_blank">注册</a>
+            <a href="login.html" id="open" target="_blank">请登录</a>
+            <a href="reg.html" target="_blank">注册</a>
             <a href="" target="_blank">我的订单</a>
             <a href="" target="_blank">客户服务</a>
             <a href="" target="_blank">网站导航</a>
@@ -91,8 +85,13 @@
 <!-- googslist -->
     <div class="goods_list">
         <ul>
-            <li class="goods_list_det">
-                <img src="img/goodsList/phone_01.png" alt="">
+            <div class="wait">
+                <img src="img/loading3.gif" alt="">
+            </div>
+            <!-- <li class="goods_list_det">
+                <a href="">
+                    <img src="img/goodsList/phone_01.png" alt="">
+                </a>
                 <p><a href="" target="_blank">HUAWEI nove4</a></p>
                 <h5>￥3999</h5>
                 <table class="goods_list_det_bot" cellpadding="0" cellpadding="0">
@@ -101,7 +100,7 @@
                         <td><span>179991人评论</span></td>
                     </tr>
                 </table>
-            </li>
+            </li> -->
         </ul>
     </div>
 <!-- footer -->
@@ -237,7 +236,7 @@
         <div class="service_right">
             <h2>400-088-6888</h2>
             <p>7×24小时客服热线（仅收市话费）</p>
-            <a class="ocservice" href="" target="_blank"><span class="iconfont iconfont_01">&#xe608;</span>&nbsp&nbsp在线客服</a>
+            <a class="ocservice" href="" target="_blank"><span class="iconfont iconfont_01">&#xe953;</span>&nbsp&nbsp在线客服</a>
             <div class="attention">
                 <h2>关注Vmall:</h2>
                 <ul class="attention_list">
@@ -319,4 +318,5 @@
 </div>
 </body>
 </html>
+<script type="text/javascript" src="js/cookieTools.js"></script>
 <script type="text/javascript" src="js/goodList.js"></script>

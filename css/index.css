@@ -35,6 +35,9 @@ a {
   float: right;
   background: #990000; }
 
+.anchor_point li a {
+  display: block; }
+
 .anchor_point li {
   font-size: 12px;
   color: #777777; }

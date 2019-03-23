@@ -132,12 +132,36 @@ function passwStro(){
     $("#userpass").on("focus",function(){
         $(".pass_word_hint").fadeIn(1000)
     })
-    let results = 0;
     $("#userpass").on("input",function(){
         let passwords = $("#userpass").val();
-        let spacingS = passwords.search(/[^ ]/)
+        let spacingS = passwords.search(/[ ]/);
         let numberS = passwords.length;
-        
+        let resultS = regExpHuawei("userpass",passwords)
+        if(spacingS = -1){
+            $("#spacing").css({"color":"greenyellow"})
+        }else{
+            $("#spacing").css({"color":"#000"})
+        }
+        if(numberS >= 8){
+            $("#chars").css({"color":"greenyellow"})
+        }else{
+            $("#chars").css({"color":"#000"})
+        }
+        if(resultS == true){
+            $("#letter").css({"color":"greenyellow"})
+        }else{
+            $("#letter").css({"color":"#000"})
+        } 
+        if(spacingS = -1 && numberS == 8 && resultS == true){
+            $(".green_bar").css({"backgroundColor":"orange"})
+            $("#strong").html("中等")
+        }else if(spacingS = -1 && numberS >= 10 && resultS == true){
+            $(".green_bar").css({"backgroundColor":"greenyellow"})
+            $("#strong").html("强")
+        }else if(numberS <= 8){
+            $(".green_bar").css({"backgroundColor":"red"})
+            $("#strong").html("弱")
+        }
     })
 
     $("#userpass").on("blur",function(){
@@ -185,6 +209,7 @@ function submitBtn(){
         
     })
 }
+
 function cloaseBTN(){
     $("#close").click(function(){
         $(".barrier_bed").fadeOut(500)
@@ -202,8 +227,8 @@ function cloaseBTN(){
                 console.log(data)
                 if(data == "1"){
                     //cookie
-                    addCookie(userphone,$("#phone").val(),30)
-                    addCookie(userpass,$("#userpass").val(),30)
+                    addCookie("userphone",$("#phone").val(),30)
+                    addCookie("userpass",$("#userpass").val(),30)
                     $("#regFail").css({"display":"none"})
                     window.location.href = "index.html"
                 }else{

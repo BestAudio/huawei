@@ -1,119 +1,140 @@
 /* phone */
-.phone{
-    width: 1200px;
-    height: 150px;
-    margin: 0 auto;
-}
-.phone_nav{
-    width: 1200px;
-    height: 50px;
-    font-size: 12px;
-    color: #666666;
-}
-.phone_nav a{
-    color: #666666;
-    line-height: 50px;
-}
-.layout{
-    width: 100%;
-    height: 100px;
-    border:1px solid #dedede;
-    
-}
-.layout div:nth-child(2){
-    border: none;
-}
-.layout_cont{
-    width: 1150px;
-    height:30px;
-    padding-top: 20px;
-    padding-left: 50px;
-    border-bottom: 1px solid #dedede;
-}
-.layout_cont p{
-    float: left;
-    font-size: 12px;
-    line-height: 12px;
-    color: #3a3a3a; 
-}
-.layout_cont a{
-    font-size: 12px;
-    line-height: 12px;
-    vertical-align: top;
-    color: #3a3a3a;
-    padding-left: 20px;
-    position: relative;
-}
-.layout_cont a:nth-child(2){
-    color: #e01d20;
-}
-.triangle{
-    height: 0px;
-    width: 0px;
-    display:block;
-    border: 4px solid transparent;
-    
-    position: absolute;
-}
-.top_tri{
-    border-bottom-color: #999999;
-    right:-12px;
-    top:0px;
-}
-.bot_tri{
-    border-top-color: #999999;
-    right:-12px;
-    top:10px
-}
+.phone {
+  width: 1200px;
+  height: 150px;
+  margin: 0 auto; }
+
+.phone_nav {
+  width: 1200px;
+  height: 50px;
+  font-size: 12px;
+  color: #666666; }
+
+.phone_nav a {
+  color: #666666;
+  line-height: 50px; }
+
+.layout {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #dedede; }
+
+.layout div:nth-child(2) {
+  border: none; }
+
+.layout_cont {
+  width: 1150px;
+  height: 30px;
+  padding-top: 20px;
+  padding-left: 50px;
+  border-bottom: 1px solid #dedede; }
+
+.layout_cont p {
+  float: left;
+  font-size: 12px;
+  line-height: 12px;
+  color: #3a3a3a; }
+
+.layout_cont a {
+  font-size: 12px;
+  line-height: 12px;
+  vertical-align: top;
+  color: #3a3a3a;
+  padding-left: 20px;
+  position: relative; }
+
+.layout_cont a:nth-child(2) {
+  color: #e01d20; }
+
+.triangle {
+  height: 0px;
+  width: 0px;
+  display: block;
+  border: 4px solid transparent;
+  position: absolute; }
+
+.top_tri {
+  border-bottom-color: #999999;
+  right: -12px;
+  top: 0px; }
+
+.bot_tri {
+  border-top-color: #999999;
+  right: -12px;
+  top: 10px; }
+
 /* goods_list */
-.goods_list{
-    width: 1200px;
-    margin:0 auto;
-}
-.goods_list ul{
-    width: 1200px;
-    padding-top: 23px;
-    overflow: hidden;
-    margin:0 auto;
-}
-.goods_list_det{
-    width: 224px;
-    height: 360px;
-    border:1px solid #dedede;
-    float: left; 
-    text-align: center;
-    margin:0 20px 20px 0;
-}
-.goods_list_det img{
-    width:180px;
-    height: 180px;
-    padding:38px 0 24px;  
-}
-.goods_list_det p{
-    font-size: 12px;
-    line-height: 20px;
-}
-.goods_list_det p a{
-   color: #666666;
-}
-.goods_list_det h5{
-    font-weight: 900;
-    line-height: 62px;
-    color:#e01d20;
-    font-size: 14px;
-}
-.goods_list_det_bot{
-    width: 100%;
-    height: 32px;
-    border-top:1px solid #dedede;
-    border-collapse: collapse;
-    table-layout: fixed;
-    font-size: 12px;
-}
-.goods_list_det_bot td:nth-child(1){
-    border-right: 1px solid #dedede;
-    
-}
-.goods_list_det_bot a{
-    color:#e01d20;
-}
+.goods_list {
+  width: 1200px;
+  min-height: 360px;
+  margin: 0 auto; }
+
+.goods_list ul {
+  width: 1200px;
+  padding-top: 23px;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.goods_list_det {
+  width: 218px;
+  height: 360px;
+  border: 1px solid #dedede;
+  float: left;
+  text-align: center;
+  margin: 0 20px 20px 0; }
+
+.goods_list_det img {
+  width: 180px;
+  height: 180px;
+  padding: 38px 0 24px; }
+
+.goods_list_det p {
+  font-size: 12px;
+  line-height: 20px; }
+
+.goods_list_det p a {
+  color: #666666; }
+
+.goods_list_det h5 {
+  font-weight: 900;
+  line-height: 62px;
+  color: #e01d20;
+  font-size: 14px; }
+
+.goods_list_det_bot {
+  width: 100%;
+  height: 32px;
+  border-top: 1px solid #dedede;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px; }
+
+.goods_list_det:hover {
+  border: 1px solid #e01d20; }
+
+.goods_list_det_bot td:nth-child(1) {
+  border-right: 1px solid #dedede; }
+
+.goods_list_det_bot a {
+  color: #e01d20; }
+
+.goods_list_det_bot td:hover {
+  background: #e01d20; }
+
+.goods_list_det_bot td:hover a {
+  color: #fff; }
+
+.goods_list_det_bot td:hover span {
+  color: #fff; }
+
+.wait {
+  width: 1200px;
+  height: 382px;
+  text-align: center;
+  line-height: 360px; }
+
+.wait img {
+  width: 50px;
+  height: 50px; }
+
+/*# sourceMappingURL=goodsList.css.map */

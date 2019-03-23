@@ -1,4 +1,13 @@
 $(function(){
+    getCookie("userphone")
+    if(getCookie("userphone") != null){
+        $("#open").children().html(getCookie("userphone"))
+        $("#open").children().click(function(evt){
+            evt.preventDefault(); 
+            window.open("cart.html")
+        })
+        
+    }
     
     // 输入框的提示信息
     searchInfo()
@@ -47,6 +56,8 @@ $(function(){
   
     //登录弹出框
     open("login.html")
+
+    hrefT()
 }) 
     // 输入框的提示信息
     function searchInfo(){
@@ -184,6 +195,13 @@ $(function(){
         })
     }
     //锚点连接连接对应位置
-
+    function hrefT(){
+        for(let i =0;i<=7;i++){
+            $("#anchor_point_ul").children()[i].onclick = function(){
+                // $(window).scrollTop($("#point"+i).offset().top)
+                $(window).animate({"scrollTop":$("#point"+i).offset().top},300)
+            }
+        }
+    }
     //弹出框登录页面
        
