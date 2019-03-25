@@ -1,6 +1,5 @@
 $(function(){
-    // mapHref()
-    $(function(){
+    $(".footer").load("commonFooter.html",function(){
         if(getCookie("userphone") != null && getCookie("userphone") !=""){
             $("#open").children().html(getCookie("userphone"))
             $(".car_hint").css({"display":"none"})
@@ -10,6 +9,7 @@ $(function(){
             })  
         }
     })
+    // mapHref()
     ajaxQ()
 })
 //悬挂条
@@ -97,23 +97,7 @@ function ajaxQ(){
         }  
     },"json")
 }
-//购物车数量加减
-function numbs(){
-    $(".sum_number").click(function(){
-        let number = parseInt($(this).parent().prev().children().val())
-        let sPrice = $(this).parent().parent().prev().children().html()
-        let price = parseInt(sPrice.substring(1))
-        let num = $(this).html()
-        num =="+"?number++:number--
-        if(number<1){
-            number=1
-        }
-            price = (price*number).toFixed(2)
-            $(this).parent().prev().children().val(number)
-            $(this).parent().prev().parent().next().children().html("￥"+price)
-       
-    })
-}
+
 
 //总价固定
 function fixedSum(){
@@ -175,17 +159,6 @@ function checkedAll(){
             if(this.checked == false){
                 result = false
             }
-            let one_price = parseInt(($(this).parent().next().children().children().eq(3).children().html()).substring(1))
-            let one_count = parseInt(($(this).parent().next().children().children().eq(2).children().children().val()))
-            let prices = parseInt($("#prices").html().substring(1))
-            let counts = parseInt($("#choose").html())
-            if($(this)[0].checked == true){
-                $("#prices").html("￥"+(prices+one_price).toFixed(2))
-                $("#choose").html(counts+one_count)
-            }else{
-                $("#prices").html("￥"+(prices-one_price).toFixed(2))
-                $("#choose").html(counts-one_count)
-            } 
         }) 
         if(result){
             $(".checked_n").each(function(){this.checked = "checked"})
@@ -209,6 +182,28 @@ function sum(){
             $("#prices").html("￥"+(prices-one_price).toFixed(2))
             $("#choose").html(counts-one_count)
         }
+    })
+    // $(".sum_number").each(function(){
+    //     if(this.checked = true){
+            
+    //     }
+    // })
+}
+//购物车数量加减
+function numbs(){
+    $(".sum_number").click(function(){
+        let number = parseInt($(this).parent().prev().children().val())
+        let sPrice = $(this).parent().parent().prev().children().html()
+        let price = parseInt(sPrice.substring(1))
+        let num = $(this).html()
+        num =="+"?number++:number--;
+        if(number<1){
+            number=1
+        }
+            price = (price*number).toFixed(2)
+            $(this).parent().prev().children().val(number)
+            $(this).parent().prev().parent().next().children().html("￥"+price)
+       
     })
 }
 

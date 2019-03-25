@@ -450,6 +450,9 @@ a{
     border-bottom-right-radius: 10px;
     background: white;
 }
+.list_hover_box{
+    width: 240px;
+}
 .list_hover_box img{
     vertical-align: middle;
     padding-left: 5px;
@@ -465,6 +468,7 @@ a{
     width: 175px;
     height: 48px;
     padding:12px 25px;
+    float: left;
     border-bottom: 1px solid #f2f2f3;
 }
 .list_ul li:last-child{
@@ -494,8 +498,9 @@ a{
     border:none;
     height: 80px;
     width: 200px;
+    float: left;
     padding:0;
-    margin: 24px 0;
+    margin: 12px 0;
     border-radius:10px; 
 }
 .list_ul_title{
@@ -826,6 +831,7 @@ a{
 }
 .product_list{
     float: left;
+    min-height: 290px;
     // overflow: hidden;
 }
 .product_list li{
@@ -924,6 +930,7 @@ a{
     min-width: 15000px;
     height:305px ;
     position: relative;
+    left: 0px;
 }
 .recommend li{
     width: 227px;

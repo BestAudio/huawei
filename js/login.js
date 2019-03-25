@@ -41,6 +41,8 @@ $(function(){
         $.post("php/login.php",{"userphone":$("#username").val(),"userpass":$("#userpass").val()},(data)=>{
            console.log(data)
             if(data == 0){
+                addCookie("userphone", $("#username").val(),30)
+                addCookie("userpass", $("#userpass").val(),30)
                 $("#password_hint").css({"display":"none"})
                 window.location.href = "index.html"
 

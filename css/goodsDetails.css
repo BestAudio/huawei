@@ -126,8 +126,8 @@
   width: 450px;
   height: 450px;
   position: relative;
-  background: url(../img/goodsList/phone_01.png) no-repeat;
-  background-size: 450px 450px; }
+  background-size: 450px 450px;
+  background-repeat: no-repeat; }
 
 .showBox {
   width: 450px;
@@ -137,8 +137,8 @@
   left: 450px;
   top: 0px;
   display: none;
-  background: url(../img/goodsList/phone_01.png) no-repeat;
-  background-size: 1080px 1080px; }
+  background-repeat: no-repeat;
+  background-size: 1200px 1200px; }
 
 .mirrorBox {
   position: absolute;

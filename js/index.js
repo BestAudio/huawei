@@ -1,6 +1,7 @@
 $(function(){
-    getCookie("userphone")
-    if(getCookie("userphone") != null){
+    console.log(getCookie("userphone"))
+    console.log( $("#open").children().html())
+    if(getCookie("userphone") != ""){
         $("#open").children().html(getCookie("userphone"))
         $("#open").children().click(function(evt){
             evt.preventDefault(); 
@@ -8,6 +9,82 @@ $(function(){
         })
         
     }
+
+    //二级导航
+    $.get("php/getGoodsList.php",(data)=>{
+        let  colunm = parseInt(data.length/4)
+        let width = 240*(colunm+1)
+        $(".list_hover_box").css({"width":width})
+        $(".list_hover_goods").css({"width":width})
+        if(data.length){
+
+        }
+        for(let i=0;i<data.length;i++){
+            let shtml = `
+                <li>
+                    <a href="" target="_blank">
+                        <img src="${data[i].goodsImg}" alt="">
+                        <span>${data[i].goodsName}</span>
+                    </a>
+                </li>
+            `
+            $(".list_hover_box").append(shtml)
+        }
+        let lasts = `
+            <li>
+                <div class="check_all">
+                    <div class="check_all_tri">
+                        <span></span>
+                    </div>
+                    <i>查看全部</i>
+                </div>
+            </li> `
+        $(".list_hover_box").append(lasts)
+
+    },"json")
+    
+   // 精品推荐
+    $.get("php/getGoodsList.php",(data)=>{
+        for(let i=0;i<data.length;i++){
+            let str = `
+                <li>
+                    <div class="recommend_par">
+                        <div class="hot_cake recommend_partit">
+                            <span>爆款</span>
+                        </div>
+                        <a href="goodsDetails.html?goodsId=${data[i].goodsId}" target="_blank">
+                            <img src="${data[i].goodsImg}" alt="">
+                        </a>
+                    </div>  
+                    <p class="recommend_list_name">新品上市 享3期免息</p>
+                    <p class="product_name recommend_par_name">${data[i].goodsName}</p>
+                    <p class="product_pri recommend_par_pri">￥${data[i].goodsPrice}</p>
+                </li>
+            `
+            $("#recommend01").append(str)
+        }
+
+    },"json")
+
+    //请求数据
+    $.get("php/getGoodsList.php",function(data){
+        for(let i = 0;i<10;i++){
+            let shtml = `
+                <li>
+                    <div class="hot_cake">
+                        <span>爆款</span>
+                    </div>
+                    <a href="goodsDetails.html?goodsId=${data[i].goodsId}" target="_blank">
+                        <img src="${data[i].goodsImg}" alt="">
+                    </a>
+                    <p class="product_name">${data[i].goodsName}</p>
+                    <p class="discounts">${data[i].beiyong6}</p>
+                    <p class="product_pri">￥${data[i].goodsPrice}</p>
+                </li>
+            `
+            $(".phone").children().eq(1).append(shtml)
+        }      
+    },"json")
     
     // 输入框的提示信息
     searchInfo()
@@ -117,6 +194,7 @@ $(function(){
     function twoList(){
         $(".list").children().hover(function(){
             $(".list_hover_goods").css({"display":"block"})
+            
         },
         function(){
             $(".list_hover_goods").css({"display":"none"})
@@ -153,8 +231,10 @@ $(function(){
         let leftSpace = 0
         $(".bou_remm_btnL").on("click",function(){
             let confine = parseInt($(this).siblings(".recommend").css("left")) 
-            let conine = ($(this).siblings(".recommend").children().last()).is("hidden")
-            if(confine < -2000){
+            let conine = $(this).siblings(".recommend").children()
+            let number = (conine.length-1)*200-1200
+            console.log(number)
+            if(Math.abs(confine)>=number){
                 return;
             }else{
                 leftSpace -= 1200
@@ -198,8 +278,8 @@ $(function(){
     function hrefT(){
         for(let i =0;i<=7;i++){
             $("#anchor_point_ul").children()[i].onclick = function(){
-                // $(window).scrollTop($("#point"+i).offset().top)
-                $(window).animate({"scrollTop":$("#point"+i).offset().top},300)
+                $(window).scrollTop($("#point"+i).offset().top)
+                // $(window).animate({"scrollTop":$("#point"+i).offset().top},300)
             }
         }
     }

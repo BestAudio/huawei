@@ -1,13 +1,20 @@
 $(function(){
-    console.log(getCookie("userphone"))
-    if(getCookie("userphone") != null){
-        $("#open").html(getCookie("userphone"))
-        $("#open").click(function(evt){
-            evt.preventDefault(); 
-            window.open("cart.html")
-        })
-        
-    }
+
+	$(".head").load("commonHeader.html",function(){
+		 if(getCookie("userphone") != null || getCookie("userphone") != ""){
+			console.log(getCookie("userphone"))
+			$("#open").children().html(getCookie("userphone"))
+			$("#open").children().click(function(evt){
+				evt.preventDefault(); 
+				window.open("cart.html")
+			})   
+		}
+	})
+	$(".footer").load("commonFooter.html")
+	searchInfo()
+	btnC()
+	searchHint()
+   
 })
 
 $(function(){
@@ -73,7 +80,6 @@ function goodsData(){
 	goodsId = url.substring(i+1)
 	godsArr = goodsId.split("=")
 	$.get("php/getGoodsInfo.php",{goodsId:godsArr[1]},(data)=>{
-		
 		$("#classes").html(data.goodsType)
 		$("#serise").html(data.goodsName)
 		$(".goodsDetails_pic_img").css({"backgroundImage":"url("+data.goodsImg+")"})
@@ -105,15 +111,14 @@ function goodsData(){
 			$("#hint_info").html(data.goodsName+data.goodsDesc)
 			let vipname = getCookie("userphone")
 			let goodsId = data.goodsId
-			let count = $("#number").html()
+			let count = $(".sum").val()
+			console.log(count)
 			$.get("php/addShoppingCart.php",{"vipName":vipname,"goodsId":goodsId,"goodsCount":count},function(data1){
 				
 				if(data1 == "1"){
 					
 					$("#go_cart").click(function(){
-						window.open("cart.html?"+data.goodsId)
-						// window.location.href ="cart.html?"+data.goodsId 
-						// window.location.target = "_blank"
+						window.open("cart.html")
 					})
 				}
 			})
@@ -136,7 +141,6 @@ function goodsData(){
 function numbs(){
     $(".add").click(function(){
 		let number = parseInt($(this).parent().prev().children().val())
-		console.log(number)
         //获取文本框值
 		number++
 		$(this).parent().prev().children().val(number)
@@ -150,4 +154,37 @@ function numbs(){
 			$(this).parent().prev().children().val(number)
 		}
 	})	
+}
+ // 输入框的提示信息
+ function searchInfo(){
+	$("#placeholder_input").children().hover(function(){
+		$(this).css({"color":"black"})},
+	function(){
+		$(this).css({"color":"#a6a6a6"})
+	}  
+	);
+}
+// 搜索框内提示
+function searchHint(){
+	$("#search").on("focus",function(){
+		$("#placeholder_input").children().css({"opacity":"0"})
+	})
+
+	$("#search").on("blur",function(){
+		$("#placeholder_input").children().css({"opacity":"1"})
+	})
+}
+// 搜索框按钮
+function btnC(){
+	$("#btn01").on("mouseover",function(){
+	$(this).siblings().css({"color":"#777777"})})
+  
+	$("#btn01").on("mouseout",function(){
+		$(this).siblings().css({"color":"black"})})
+		
+	$("#btn01").siblings().on("mouseover",function(){
+		$(this).css({"color":"#777777"})}) 
+
+	$("#btn01").siblings().on("mouseover",function(){
+			$(this).css({"color":"#777777"})})  
 }
